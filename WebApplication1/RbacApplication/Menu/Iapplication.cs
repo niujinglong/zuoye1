@@ -8,8 +8,9 @@ namespace RbacApplication
     {
         List<MenuDto> GetAll();
         List<MenuCrealist> GetList();
-        int Add(Menu menu);
-        int Del(Menu menu);
-        int Edit(Menu menu);
+        int Add(Rbac.Entity.Menu menu);
+        int Del(Rbac.Entity.Menu menu);
+        int Edit(Rbac.Entity.Menu menu);
+        List<Rbac.Entity.Menu> Show();
     }
 }

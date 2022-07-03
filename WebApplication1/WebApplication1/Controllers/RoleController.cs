@@ -52,5 +52,11 @@ namespace WebApplication1.Controllers
         {
             return Ok(role.Update(r));
         }
+
+        [HttpPost]
+        public IActionResult SavePermission(PermissionDto permission)
+        {
+            return Ok(role.SavePermission(permission));
+        }
     }
 }

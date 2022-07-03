@@ -20,10 +20,6 @@
       sortable
       width="180">
     </el-table-column>
-    <el-table-column
-      prop="linkUrl"
-      label="链接">
-    </el-table-column>
     <el-table-column label="操作">
       <template slot-scope="scope">
         <el-button
@@ -44,8 +40,8 @@
 </div>
 </template>
 <script>
-import addpros from '@/views/add.vue'
-import updpros from '@/views/upd.vue'
+import addpros from '@/views/Menu/add.vue'
+import updpros from '@/views/Menu/upd.vue'
   export default {
     components: {
     addpros,

@@ -62,5 +62,11 @@ namespace WebApplication1.Controllers
         {
             return Ok(prostsfjkst.Del(menu));
         }
+
+        [HttpGet]
+        public IActionResult Show()
+        {
+            return new JsonResult(prostsfjkst.Show());
+        }
     }
 }

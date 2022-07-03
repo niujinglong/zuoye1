@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RbacApplication.Admin
 {
-    public class AdminDto : BaseClass
+    public class AdminDto
     {
         public long AdminId { get; set; }
         public string UserName { get; set; }
@@ -16,5 +16,6 @@ namespace RbacApplication.Admin
         public DateTime? LastLoginTime { get; set; }
         public string LastLoginIP { get; set; }
         public byte IsLock { get; set; }
+        public DateTime? CreateTime { get; set; }
     }
 }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace RbacApplication.Role
 {
-    public interface IRoleService:IBaseService<Rbac.Entity.Role, RoleDto>
+    public class PermissionDto
     {
-        int SavePermission(PermissionDto permission);
+        public int[] MenuId { get; set; }
+        public int RoleId { get; set; }
     }
 }

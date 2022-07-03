@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ClassLibraryEF.Migrations
 {
-    public partial class helps : Migration
+    public partial class text : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,9 +15,9 @@ namespace ClassLibraryEF.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastLoginTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastLoginIP = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastLoginIP = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsLock = table.Column<byte>(type: "tinyint", nullable: false),
                     CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateId = table.Column<int>(type: "int", nullable: false),

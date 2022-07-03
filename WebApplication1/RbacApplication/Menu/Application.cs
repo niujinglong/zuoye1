@@ -87,20 +87,25 @@ namespace RbacApplication
             }
         }
 
-        public int Add(Menu menu)
+        public int Add(Rbac.Entity.Menu menu)
         {
             var list = fjslkfsfkejfsl.Add(menu);
             return list;
         }
 
-        public int Del(Menu menu)
+        public int Del(Rbac.Entity.Menu menu)
         {
             return fjslkfsfkejfsl.Del(menu);
 
         }
-        public int Edit(Menu menu)
+        public int Edit(Rbac.Entity.Menu menu)
         {
             return fjslkfsfkejfsl.Edit(menu);
+        }
+
+        public List<Rbac.Entity.Menu> Show()
+        {
+            return fjslkfsfkejfsl.GetAll();
         }
     }
 }

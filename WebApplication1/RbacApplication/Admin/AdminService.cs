@@ -102,5 +102,18 @@ namespace RbacApplication.Admin
         {
             return string.Join("", MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(val)).Select(x => x.ToString("x2")));
         }
+
+        /// <summary>
+        /// 分页显示
+        /// </summary>
+        /// <param name="Pindex"></param>
+        /// <param name="Psize"></param>
+        /// <returns></returns>
+        public Tuple<List<Rbac.Entity.Admin>, int> Page(int Pindex = 1, int Psize = 2)
+        {
+            var list = mapper.Map<List<Rbac.Entity.Admin>>(AdminRepository.GetAll().OrderBy(s => s.AdminId).Skip((Pindex - 1) * Psize).Take(Psize).ToList());
+            var count = AdminRepository.GetAll().Count();
+            return new Tuple<List<Rbac.Entity.Admin>, int>(list, count);
+        }
     }
 }

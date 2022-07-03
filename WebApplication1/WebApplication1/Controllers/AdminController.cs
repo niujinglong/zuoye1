@@ -6,11 +6,11 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class AdminController : ControllerBase
+    public class AdminsController : ControllerBase
     {
         private readonly IAdminService adminService;
 
-        public AdminController(IAdminService adminService)
+        public AdminsController(IAdminService adminService)
         {
             this.adminService = adminService;
         }
@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Register(AdminDto dto)
+        public IActionResult Register(RbacApplication.Admin.AdminDto dto)
         {
             return Ok(adminService.Register(dto));
         }
@@ -35,6 +35,18 @@ namespace WebApplication1.Controllers
         public IActionResult Login(LoginDto dto)
         {
             return Ok(adminService.Login(dto));
+        }
+
+        /// <summary>
+        /// 分页
+        /// </summary>
+        /// <param name="Pindex"></param>
+        /// <param name="Psize"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Page(int Pindex = 1, int Psize = 2)
+        {
+            return Ok(adminService.Page(Pindex, Psize));
         }
 
         //[HttpPost]

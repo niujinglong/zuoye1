@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClassLibraryEF.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20220623003608_text1")]
-    partial class text1
+    [Migration("20220627131158_text")]
+    partial class text
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,9 +35,7 @@ namespace ClassLibraryEF.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
@@ -46,9 +44,7 @@ namespace ClassLibraryEF.Migrations
                         .HasColumnType("tinyint");
 
                     b.Property<string>("LastLoginIP")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("LastLoginTime")
                         .HasColumnType("datetime2");

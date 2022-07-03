@@ -1,8 +1,7 @@
 <template>
 <el-card class="box-card">
   <div slot="header" class="clearfix">
-    <span>登录</span>
-    <el-button @click="Zhu" style="float: right; padding: 3px 0" type="text">注册</el-button>
+    <span>注册</span>
   </div>
   <div>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
@@ -18,6 +17,7 @@
 </el-form>
   </div>
 </el-card>
+</body>
 </template>
 <script>
   export default {
@@ -41,7 +41,7 @@
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.$axios.post('https://localhost:44340/api/Admins/Login',this.ruleForm)
+            this.$axios.post('https://localhost:44340/api/Admins/Register',this.ruleForm)
             .then(res =>{
                 let loginfo = res.data;
                 if(loginfo.code > 0)
@@ -49,12 +49,8 @@
                     this.$message.error(loginfo.msg);
                 }
                 else{
-                  window.sessionStorage.setItem("userName",res.data.length);
-                    localStorage.setItem("toked",loginfo.toKed);
-                    this.$message.success('登录成功');
-                     this.$router.push('/');
-                     
-                   
+                    this.$message.success('注册成功');
+                    this.$router.push('/login')
                 }
             })
           } else {
@@ -63,9 +59,6 @@
           }
         });
       },
-      Zhu(){
-        this.$router.push('/zhu');
-      }
     }
   }
 </script>

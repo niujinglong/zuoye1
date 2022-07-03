@@ -208,7 +208,6 @@ D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\WebAp
 D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.AssemblyInfoInputs.cache
 D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.AssemblyInfo.cs
 D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.csproj.CoreCompileInputs.cache
-D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
 D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
 D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\scopedcss\bundle\WebApplication1.styles.css
 D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\staticwebassets\WebApplication1.StaticWebAssets.Manifest.cache

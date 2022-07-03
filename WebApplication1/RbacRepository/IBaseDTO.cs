@@ -13,6 +13,7 @@ namespace RbacRepository
         where TKey : struct
     {
         int Add(T list);
+        int Add(List<T> list);
         int Del(TKey k);
         List<T> GetAll();
         T GetEntity(Expression<Func<T, bool>> predicate);

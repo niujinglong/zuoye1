@@ -16,8 +16,7 @@
     <el-input v-model="form.linkurl"></el-input>
   </el-form-item>
   <el-form-item>
-    <el-button type="primary" @click="onSubmit">立即创建</el-button>
-    <el-button>取消</el-button>
+    <el-button type="primary" @click="onSubmit()">立即创建</el-button>
   </el-form-item>
 </el-form>
 </div>
@@ -29,32 +28,38 @@
       return {
         options:[],
         form: {
-          menuId:"",
+          menuId:0,
           menuname: '',
-          ParentId:'',
           linkurl: '',
+          ParentId:0,
         }
       }
     },
+    watch:{
+        formdate(val)
+        {
+          this.GetShow();
+        }
+    },
     methods: {
       onSubmit() {
-        debugger
-        this.form.ParentId = this.$refs["getParentId"].getCheckedNodes()[0].value;
-        this.$axios.post('https://localhost:44340/api/VUE/Edit',this.form)
+        this.form.ParentId=this.$refs["getParentId"].checkedValue[this.$refs["getParentId"].checkedValue.length-2];
+           this.$axios.post('https://localhost:44340/api/VUE/Edit',this.form)
         .then(res =>{
             if(res.data > 0)
             {
-                this.$message.success('修改成功');
-                this.$emit("Edit",true);
+              this.$message.success('修改成功');
+              this.$emit("Edit");
+            }else{
+              this.$message.error('修改失败');
             }
         })
       },
       GetShow(){
-        debugger
-            this.form.menuId = this.formdate.menuId;
-            this.form.menuname=this.formdate.menuName;
-            this.form.linkurl=this.formdate.linkurl;
-            this.form.ParentId=this.formdate.menuId;
+        this.form.menuId = this.formdate.menuId;
+        this.form.menuname = this.formdate.menuName;
+        this.form.linkurl = this.formdate.linkUrl;
+        this.form.ParentId = this.formdate.menuId;
         this.$axios.get('https://localhost:44340/api/VUE/GetList')
         .then(res =>{
             var reg = new RegExp('\\,"children":\\[]',"g");
@@ -64,12 +69,6 @@
     },
     created(){
         this.GetShow();
-    },
-    watch:{
-        formdate(val)
-        {
-          this.GetShow();
-        }
-    },
+    }
   }
 </script>
