@@ -1,5 +1,8 @@
 <template>
 <div>
+  <el-button
+          size="mini"
+          @click="Zhu">注册</el-button>
   <el-table
     :data="tableData"
     style="width: 100%">
@@ -59,15 +62,32 @@
             pindex:1,
             psize:2,
             total:0
-        }
+        },
       }
     },
     methods: {
       handleEdit(index, row) {
-        console.log(index, row);
+        debugger
+        this.$router.push("/updAdmin?id="+row.adminId)
+      },
+      Zhu(){
+        this.$router.push("/Zhu");
       },
       handleDelete(index, row) {
-        console.log(index, row);
+        if(confirm("确定要删除吗?"))
+        {
+          this.$axios.get('https://localhost:44340/api/Admins/Del?id='+row.adminId)
+        .then(res =>{
+            if(res.data>0)
+            {
+              this.$message("删除成功");
+            }
+            else
+            {
+              this.$message("无法删除");
+            }
+        })
+        }
       },
       handleSizeChange(val){
         this.page.psize = val;

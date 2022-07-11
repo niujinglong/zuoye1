@@ -224,3 +224,4 @@ D:\专高六\课堂代码\WebApplication1\WebApplication1\bin\Debug\net5.0\Micro
 D:\专高六\课堂代码\WebApplication1\WebApplication1\bin\Debug\net5.0\Scrutor.dll
 D:\专高六\课堂代码\WebApplication1\WebApplication1\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.dll
 D:\专高六\课堂代码\WebApplication1\WebApplication1\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\专高六\课堂代码\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cs

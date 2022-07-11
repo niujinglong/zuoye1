@@ -28,5 +28,7 @@ namespace RbacApplication.Admin
         /// <param name="Psize"></param>
         /// <returns></returns>
 
-        Tuple<List<Rbac.Entity.Admin>, int> Page(int Pindex = 1, int Psize = 2);    }
+        Tuple<List<Rbac.Entity.Admin>, int> Page(int Pindex = 1, int Psize = 2);
+    
+    }
 }

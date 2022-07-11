@@ -49,6 +49,24 @@ namespace WebApplication1.Controllers
             return Ok(adminService.Page(Pindex, Psize));
         }
 
+        [HttpPut]
+        public IActionResult Upd(AdminDto a)
+        {
+            return Ok(adminService.Update(a));
+        }
+
+        [HttpGet]
+        public IActionResult Fan(long id)
+        {
+            return Ok(adminService.GetById(id));
+        }
+
+        [HttpDelete]
+        public IActionResult Del(long id)
+        {
+            return Ok(adminService.Delete(id));
+        }
+
         //[HttpPost]
         //public IActionResult Add(AdminDto dto)
         //{

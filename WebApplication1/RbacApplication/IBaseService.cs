@@ -15,7 +15,9 @@ namespace RbacApplication
         int Add(TDto dto);
         int Update(TDto dto);
         int Delete(int id);
+        int Delete(long id);
         TDto GetById(int id);
+        TDto GetById(long id);
         List<TDto> GetAll();
         
         shuju GetFen(TiaoJian j);

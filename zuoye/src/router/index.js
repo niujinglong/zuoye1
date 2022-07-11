@@ -48,6 +48,16 @@ const routes = [
     component: () => import('../views/Admin/Login.vue')
   },
   {
+    path: '/listadmin',
+    name: 'listadmin',
+    component: () => import('../views/Admin/listadmin.vue')
+  },
+  {
+    path: '/adminadd',
+    name: 'i',
+    component: () => import('../views/Admin/adminadd.vue')
+  },
+  {
     path: '/tree',
     name: 'h',
     component: () => import('../views/Role/tree.vue')
@@ -59,20 +69,25 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  },
+  {
+    path: '/updAdmin',
+    name: 'updAdmin',
+    component: () => import('../views/Admin/updAdmin.vue')
+  },
 ]
 
 const router = new VueRouter({
   routes
 })
-let userna = sessionStorage.getItem("userName")??"";
 router.beforeEach((to,form,next) =>{
-  if(to.name != '登录' && form.name != '登录')
-  {
-    next({name:'登录'});
+  let userna = sessionStorage.getItem("userName")??"";
+   if(to.name != '登录' && userna.length == 0)
+   {
+     next({name:'登录'});
   }else{
     next()
-  }
-})
+   }
+ })
 
 export default router

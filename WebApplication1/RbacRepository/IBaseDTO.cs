@@ -15,10 +15,12 @@ namespace RbacRepository
         int Add(T list);
         int Add(List<T> list);
         int Del(TKey k);
+        int Del(long k);
         List<T> GetAll();
         T GetEntity(Expression<Func<T, bool>> predicate);
         shuju GetFen(TiaoJian j);
         T Get(int id);
+        T Get(long id);
         int Upd(T t);
     }
 }

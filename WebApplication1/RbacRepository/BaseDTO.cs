@@ -32,12 +32,20 @@ namespace RbacRepository
             db.Remove(list);
             return db.SaveChanges();
         }
-
+        public virtual int Del(long k)
+        {
+            var list = db.Set<T>().Find(k);
+            db.Remove(list);
+            return db.SaveChanges();
+        }
         public virtual T Get(int id)
         {
             return db.Set<T>().Find(id);
         }
-
+        public virtual T Get(long id)
+        {
+            return db.Set<T>().Find(id);
+        }
         public virtual List<T> GetAll()
         {
             var list = db.Set<T>().AsQueryable();

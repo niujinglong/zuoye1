@@ -31,7 +31,10 @@ namespace RbacApplication
         {
             return baseService.Del(id);
         }
-
+        public int Delete(long id)
+        {
+            return baseService.Del(id);
+        }
         public  virtual List<TDto> GetAll()
         {
             return mapper.Map<List<TDto>>(baseService.GetAll());
@@ -48,7 +51,10 @@ namespace RbacApplication
         {
             return mapper.Map<TDto>(baseService.Get(id));
         }
-
+        public TDto GetById(long id)
+        {
+            return mapper.Map<TDto>(baseService.Get(id));
+        }
         public int Update(TDto dto)
         {
             return baseService.Upd(mapper.Map<T>(dto));
